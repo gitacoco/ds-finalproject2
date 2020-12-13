@@ -11,7 +11,10 @@
 
 <body id="canvas">
     <div class="title">efficiency<br>Blog with<br>Energy<br>Bars</div>
-    <div class="counter"></div>
+    <div class="countspace">
+        <div class="name">Total Entries: </div>
+        <div class="counter"></div>
+    </div>
     <div class="button" id="sortkey">Sort by Date</div>
     <div class="button" id="yes">Class Day</div>
     <div class="button" id="no">Free Day</div>
@@ -52,7 +55,11 @@
             var items = data['Items']
             var count_class = data['Count']
 
-            $('.counter').append(`Total Entries: ${count_class}`)
+            //$('.counter').append(`Total Entries: ${count_class}`)
+
+            var global_count = $('.counter').text()
+            total_count = Number(global_count) + Number(count_class)
+            $('.counter').empty().append(`${total_count}`)
 
             for (var i = 0; i < count_class; i++) {
                 let data = items[i]
@@ -79,7 +86,11 @@
             var items = data['Items']
             var count_free = data['Count']
 
-            $('.counter').append(` + ${count_free}`)
+            //$('.counter').append(` + ${count_free}`)
+
+            var global_count = $('.counter').text()
+            total_count = Number(global_count) + Number(count_free)
+            $('.counter').empty().append(`${total_count}`)
 
             for (var i = 0; i < count_free; i++) {
                 let data = items[i]
@@ -186,6 +197,13 @@
             }
         }
 
+        // $.ajax({
+        //     url: 'https://zigbgeduhc.execute-api.us-east-2.amazonaws.com/finalblog_API/blogentry',
+        //     success: function (data) { // callback for successful completion
+        //         var count = data['Count']
+        //         $('.counter').append(`${count}`)
+        //     },
+        // });
 
         $('body').on('click', '#yes.button', function () {
             $('.classday').remove()
@@ -199,6 +217,7 @@
                     line(x_free, y_free, x1, y1);
                 } else { }
             }
+            $('.counter').empty().append(`${count_free}`)
             $('#yes').attr('class', 'button_clicked');
         });
 
@@ -221,6 +240,7 @@
                     line(x_class, y_class, x1, y1);
                 } else { }
             }
+            $('.counter').empty().append(`${count_class}`)
             $('#no').attr('class', 'button_clicked');
         });
 
