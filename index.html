@@ -51,6 +51,16 @@
             loadJSON(url_no, drawline2);
         }
 
+        function draw(){
+            fill('#EDCE7D');
+            circle(x_class+2, y_class+2, 10)
+            noStroke();
+
+            fill('#8BD667');
+            circle(x_free+2, y_free+2, 10)
+            noStroke();
+        } 
+
         function drawline1(data) {
             var items = data['Items']
             var count_class = data['Count']
@@ -143,6 +153,7 @@
                     line(x_free, y_free, x1, y1);
                 } else { }
             }
+            $('#sortkey').attr('id', 'sort_clicked');
         })
 
 
@@ -225,6 +236,7 @@
             var url_class = 'https://zigbgeduhc.execute-api.us-east-2.amazonaws.com/finalblog_API/blogentry/yes'
             loadJSON(url_class, drawline1);
             $('#yes').attr('class', 'button');
+            $('#sort_clicked').attr('id', 'sortkey');
         });
 
 
@@ -248,6 +260,7 @@
             var url_no = 'https://zigbgeduhc.execute-api.us-east-2.amazonaws.com/finalblog_API/blogentry/no'
             loadJSON(url_no, drawline2);
             $('#no').attr('class', 'button');
+            $('#sort_clicked').attr('id', 'sortkey');
         });
 
 

@@ -54,6 +54,10 @@ body {
   position: fixed;
 }
 
+#sort_clicked{
+  visibility: hidden;
+}
+
 .centerframe {
   display: flex;
   flex-direction: column;
@@ -76,13 +80,13 @@ body {
 } */
 
 #yes {
-  left: 7em;
+  left: 6.5em;
   top: 35em;
   cursor: pointer;
 }
 
 #no {
-  left: 7em;
+  left: 6.5em;
   top: 65em;
   cursor: pointer;
 }
