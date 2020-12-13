@@ -3,7 +3,7 @@
 
 body {
   background-color: #07223c;
-  min-width: 2000px;
+  min-width: 1500px;
 }
 
 .title {
@@ -101,7 +101,7 @@ body {
   flex-direction: column;
   width: 60%;
   max-width: 800px;
-  min-width: 700px;
+  /* min-width: 700px; */
 }
 
 .button {
