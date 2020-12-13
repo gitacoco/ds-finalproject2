@@ -153,7 +153,7 @@
                     line(x_free, y_free, x1, y1);
                 } else { }
             }
-            $('#sortkey').attr('id', 'sort_clicked');
+            $('#sortkey').attr('id', 'sort_clicked').html('Successfully Sorted!');
         })
 
 
@@ -236,7 +236,7 @@
             var url_class = 'https://zigbgeduhc.execute-api.us-east-2.amazonaws.com/finalblog_API/blogentry/yes'
             loadJSON(url_class, drawline1);
             $('#yes').attr('class', 'button');
-            $('#sort_clicked').attr('id', 'sortkey');
+            $('#sort_clicked').attr('id', 'sortkey').html('Sort by date');
         });
 
 
@@ -260,7 +260,7 @@
             var url_no = 'https://zigbgeduhc.execute-api.us-east-2.amazonaws.com/finalblog_API/blogentry/no'
             loadJSON(url_no, drawline2);
             $('#no').attr('class', 'button');
-            $('#sort_clicked').attr('id', 'sortkey');
+            $('#sort_clicked').attr('id', 'sortkey').html('Sort by date');
         });
 
 

@@ -55,7 +55,11 @@ body {
 }
 
 #sort_clicked{
-  visibility: hidden;
+  top: 8em;
+  right: 5em;
+  position: fixed;
+  /* visibility: hidden; */
+  pointer-events: none;
 }
 
 .centerframe {
