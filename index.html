@@ -51,15 +51,15 @@
             loadJSON(url_no, drawline2);
         }
 
-        function draw(){
+        function draw() {
             fill('#EDCE7D');
-            circle(x_class+2, y_class+2, 10)
+            circle(x_class + 2, y_class + 2, 10)
             noStroke();
 
             fill('#8BD667');
-            circle(x_free+2, y_free+2, 10)
+            circle(x_free + 2, y_free + 2, 10)
             noStroke();
-        } 
+        }
 
         function drawline1(data) {
             var items = data['Items']
@@ -128,8 +128,11 @@
                 return parseInt(a.id) - parseInt(b.id);
             }).each(function () {
                 var elem = $(this);
-                elem.remove();
-                $(elem).appendTo(".base");
+                //elem.remove()
+                elem.fadeOut(100, function () {
+                    elem.remove(100);
+                });
+                $(elem).appendTo(".base").fadeIn(500);
             });
             clear();
             var count_class = $(".base .classday").length
