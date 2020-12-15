@@ -125,7 +125,7 @@
 
         $('body').on('click', '#sortkey', function () {
             $(".item").sort(function (a, b) {
-                return parseInt(a.id) - parseInt(b.id);
+                return parseInt(b.id) - parseInt(a.id);
             }).each(function () {
                 var elem = $(this);
                 //elem.remove()
