@@ -85,13 +85,13 @@ body {
 
 #yes {
   left: 6.5em;
-  top: 35em;
+  top: 30em;
   cursor: pointer;
 }
 
 #no {
   left: 6.5em;
-  top: 65em;
+  top: 50em;
   cursor: pointer;
 }
 
